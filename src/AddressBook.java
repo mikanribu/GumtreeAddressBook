@@ -44,16 +44,27 @@ public class AddressBook {
 		return male;
 	}
 	
+	public Person whoIsTheOldest()
+	{
+		Person older = this.adBook.get(0);
+		
+		for (Person p : this.adBook) {
+			older = older.isOlder(p);
+		}
+		return older;
+	}
+	
 	
 	public static void main(String[] args) {
 		AddressBook adb = new AddressBook();
 		
-		for (Person p : adb.adBook) {
-			System.out.println(p.toString());
-		}
+//		for (Person p : adb.adBook) {
+//			System.out.println(p.toString());
+//		}
 		
 		int male = adb.howManyMale();
+		Person older = adb.whoIsTheOldest();
 		System.out.println(male);
-		
+		System.out.println(older.toString());
 	}
 }

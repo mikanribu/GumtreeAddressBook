@@ -35,6 +35,19 @@ public class Person {
 				+ ", gender=" + this.gender + ", date=" + this.date + "]";
 	}
 	
+	public Person isOlder(Person p)
+	{
+		if(this.date.after(p.date)){
+    		return p;
+    	}
+		else if(this.date.before(p.date)){
+    		return this;
+    	}
+
+		return this;
+
+	}
+	
 	public int isMale()
 	{
 		if(this.gender.equals("Male") )
