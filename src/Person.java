@@ -14,9 +14,9 @@ public class Person {
 	public Person(String sName, String sGender, String sDate)
 	{
 		String[] allName = sName.split(" ");
-		this.firstName = allName[0];
-		this.lastName = allName[1];
-		this.gender = sGender;
+		this.firstName = allName[0].trim();
+		this.lastName = allName[1].trim();
+		this.gender = sGender.trim();
 		
 		Date date;
 		try {
@@ -33,6 +33,13 @@ public class Person {
 	public String toString() {
 		return "Person [firstName=" + this.firstName + ", lastName=" + this.lastName
 				+ ", gender=" + this.gender + ", date=" + this.date + "]";
+	}
+	
+	public int isMale()
+	{
+		if(this.gender.equals("Male") )
+			return 1;
+		return 0;
 	}
 
 	public String getFirstName() {

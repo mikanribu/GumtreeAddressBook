@@ -35,8 +35,25 @@ public class AddressBook {
 		return adB;
 	}
 	
+	public int howManyMale()
+	{
+		int male = 0;
+		for (Person p : this.adBook) {
+			male += p.isMale();
+		}
+		return male;
+	}
+	
 	
 	public static void main(String[] args) {
 		AddressBook adb = new AddressBook();
+		
+		for (Person p : adb.adBook) {
+			System.out.println(p.toString());
+		}
+		
+		int male = adb.howManyMale();
+		System.out.println(male);
+		
 	}
 }
