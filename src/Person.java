@@ -21,6 +21,12 @@ public class Person {
 		
 	}
 
+	@Override
+	public String toString() {
+		return "Person [firstName=" + this.firstName + ", lastName=" + this.lastName
+				+ ", gender=" + this.gender + ", date=" + this.date + "]";
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
