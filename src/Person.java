@@ -11,6 +11,12 @@ public class Person {
 	protected String gender;
 	protected Date date;
 	
+	/**
+	 * Constructor
+	 * @param sName
+	 * @param sGender
+	 * @param sDate
+	 */
 	public Person(String sName, String sGender, String sDate)
 	{
 		String[] allName = sName.split(" ");
@@ -35,6 +41,11 @@ public class Person {
 				+ ", gender=" + this.gender + ", date=" + this.date + "]";
 	}
 	
+	/**
+	 * Return the older person between 2 persons
+	 * @param p Person
+	 * @return Person, the older person
+	 */
 	public Person isOlder(Person p)
 	{
 		if(this.date.after(p.date)){
@@ -48,11 +59,36 @@ public class Person {
 
 	}
 	
+	/**
+	 * Tell if the person is a Male
+	 * @return 1 if Male, 0 either
+	 */
 	public int isMale()
 	{
 		if(this.gender.equals("Male") )
 			return 1;
 		return 0;
+	}
+	
+	/**
+	 * Return the age difference in day between 2 persons
+	 * @param p
+	 * @return diff, difference between 2 dates
+	 */
+	public long ageDifference(Person p)
+	{
+		long diff = this.date.getTime() - p.date.getTime();
+		
+//		System.out.println("Difference is "
+//		        + (diff / (1000 * 60 * 60 * 24)) + " days.");
+//		  
+		return diff / (1000 * 60 * 60 * 24);
+	}
+	
+	
+	public String getName()
+	{
+		return firstName+" "+lastName;
 	}
 
 	public String getFirstName() {
